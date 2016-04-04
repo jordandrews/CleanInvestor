@@ -1,0 +1,12 @@
+<template name="article">
+  <div class="container center-align article-container">
+    <div class="card left-align article-card">
+        <h4>{{article.title}}</h4>
+        <h6 class="grey-text">{{ article.createdAt }}</h6>
+        <img width="482" height="278" src="{{ article.image.url }}">
+        <div class="content">
+          {{{article.body}}}
+        </div>
+  </div>
+  </div>
+</template>

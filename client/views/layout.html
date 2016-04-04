@@ -1,0 +1,100 @@
+<template name="layout">
+  <div class="wrapper">
+  <div class="navbar-fixed">
+  <nav class="green" role="navigation">
+  <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">The Clean Investor</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a class="orange-text text-lighten-3" href="{{pathFor 'greenlist'}}">The Clean Investor's Watchlist</a></li>
+      <li><a href="{{pathFor 'about'}}">About</a></li>
+      <li><a href="{{pathFor 'disclaimer'}}">Disclaimer</a></li>
+    </ul>
+    <ul id="nav-mobile" class="side-nav">
+      <li><a class="orange-text text-lighten-3" href="{{pathFor 'greenlist'}}">Our Watchlist</a></li>
+      <li><a class="green-text" href="{{pathFor 'about'}}">About</a></li>
+      <li><a class="green-text" href="{{pathFor 'disclaimer'}}">Disclaimer</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">&#xE5D2;</i></a>
+  </div>
+</nav>
+</div>
+    <div id="top-ad" class="container">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+   style="display:block"
+   data-ad-client="ca-pub-8680569398697574"
+   data-ad-slot="3571640443"
+   data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+		<div class="row section page-content">
+      <div class="col s12 m9 black-text">
+					{{> yield }}
+      </div>
+      <div class="col s12 m3">
+          {{> sidebar }}
+      </div>
+		</div>
+    <div class="page-footer">
+  					{{> footer }}
+    </div>
+</div>
+</template>
+
+<template name="sidebar">
+    <ul class="collection with-header">
+      <li class="collection-header center"><h4 class="center">Most Popular</h4></li>
+      {{# each articles}}
+      {{> sidebarArticle}}
+      {{/each}}
+    </ul>
+<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-8680569398697574"
+     data-ad-slot="6525106848"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
+</template>
+
+<template name="sidebarArticle">
+  <a href="{{pathFor 'article'}}" class="collection-item">{{title}}</a>
+</template>
+
+<template name="footer">
+  <footer class="page-footer green">
+    <div class="container">
+      <div class="row">
+        <div class="col m6 s12">
+          <h5><a class="white-text" href="/">The Clean Investor</a></h5>
+          <p class="grey-text text-lighten-4">Contact: jordan@thecleaninvestor.com.au</p>
+        </div>
+        <div class="col m3 s12">
+          <h5 class="white-text">Navigation</h5>
+          <ul>
+            <li><a class="white-text" href="{{pathFor 'about'}}">About</a></li>
+            <li><a class="white-text" href="{{pathFor 'disclaimer'}}">Disclaimer</a></li>
+            <li><a class="white-text" href="#!"></a></li>
+            <li><a class="white-text" href="#!"></a></li>
+          </ul>
+        </div>
+        <div class="col m3 s12">
+          <h5 class="white-text">Social Media</h5>
+          <ul>
+            <li><a class="white-text" href="https://www.facebook.com/thecleaninvestor">Facebook</a></li>
+            <li><a class="white-text" href="https://twitter.com/acleaninvestor">Twitter</a></li>
+            <li><a class="white-text" href="#!"></a></li>
+            <li><a class="white-text" href="#!"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="https://www.facebook.com/thecleaninvestor">The Clean Investor</a>
+      </div>
+    </div>
+  </footer>
+</template>

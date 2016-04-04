@@ -1,0 +1,40 @@
+<template name="greenlist">
+  <div class="container center-align article-container">
+    <div class="card left-align article-card">
+  {{#each category in categories}}
+    <h4>
+      {{category}}
+    </h4>
+    <table class="highlight">
+      <tbody>
+    {{#each articles}}
+      {{#if hasTag category}}
+
+      <a href="{{pathFor 'article'}}" class="collection-item">
+        <tr>
+          <td>{{this.company}}</td>
+          <td>{{this.title}}</td>
+        </tr>
+      </a>
+      {{/if}}
+    {{/each}}
+  </tbody>
+  </table>
+  {{/each}}
+
+  </div>
+  </div>
+</template>
+
+<template name="greenListCategory">
+  {{#each articles}}
+  {{> greenListItemArticle}}
+  {{/each}}
+</template>
+
+
+<template name="greenListItemArticle">
+  <!-- {{#if isCompany}} -->
+  <a href="{{pathFor 'article'}}" class="collection-item">{{title}}</a>
+  <!-- {{/if}} -->
+</template>

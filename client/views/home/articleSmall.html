@@ -1,0 +1,15 @@
+<template name="articleSmall">
+  <div class="col s12 m4">
+    <a href="{{ pathFor 'article' }}">
+    <div class="card hoverable">
+      <div class="card-image">
+        <img src="{{image.url}}">
+        <span class="card-title">{{title}}</span>
+      </div>
+      <div class="card-content">
+        <p class="black-text">{{blurb}}</p>
+      </div>
+    </div>
+    </a>
+  </div>
+</template>
